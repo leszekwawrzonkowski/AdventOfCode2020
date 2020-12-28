@@ -14,22 +14,22 @@ public class DayOneController {
 	@Autowired
 	private DayOneService dayOneService;
 	
-	@GetMapping("/day-one-part-one")
+	@GetMapping("/api-D1-P1")
 	public Integer partOneGetExample() {
-		return this.dayOneService.solvePartOneTask("1721\n979\n366\n299\n675\n1456").getAnswer();
+		return this.dayOneService.solvePartOneTask(DayOneService.DAY_EXAMPLE_INPUT).getAnswer();
 	}
 	
-	@PostMapping("/day-one-part-one")
+	@PostMapping("/api-D1-P1")
 	public Integer partOneSolve(@RequestBody String input) {
 		return this.dayOneService.solvePartOneTask(input).getAnswer();
 	}
 	
-	@GetMapping("/day-one-part-two")
+	@GetMapping("/api-D1-P2")
 	public Integer partTwoGetExample() {
-		return this.dayOneService.solvePartTwoTask("1721\n979\n366\n299\n675\n1456").getAnswer();
+		return this.dayOneService.solvePartTwoTask(DayOneService.DAY_EXAMPLE_INPUT).getAnswer();
 	}
 	
-	@PostMapping("/day-one-part-two")
+	@PostMapping("/api-D1-P2")
 	public Integer partTwoSolve(@RequestBody String input) {
 		return this.dayOneService.solvePartTwoTask(input).getAnswer();
 	}

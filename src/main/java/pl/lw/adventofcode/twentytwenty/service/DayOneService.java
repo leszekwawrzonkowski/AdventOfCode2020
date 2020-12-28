@@ -14,6 +14,12 @@ import pl.lw.adventofcode.twentytwenty.util.AdventOfCodeUtils;
 @Service
 public class DayOneService {
 	
+	public static final String DAY_NAME = "Day 1";
+	public static final String DAY_ID_SUFFIX = "D1";
+	public static final String DAY_EXAMPLE_INPUT = "1721\n979\n366\n299\n675\n1456";
+	public static final String DAY_PUZZLE_PAGE_URL = "https://adventofcode.com/2020/day/1";
+	public static final String DAY_INPUT_PAGE_URL = "https://adventofcode.com/2020/day/1/input";
+	
 	public static final Integer EXPECTED_SUM = 2020;
 	public static final Integer PART_ONE_ELEMENTS_TO_SUM = 2;
 	public static final Integer PART_TWO_ELEMENTS_TO_SUM = 3;
