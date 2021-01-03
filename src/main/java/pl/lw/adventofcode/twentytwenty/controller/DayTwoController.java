@@ -6,32 +6,32 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import pl.lw.adventofcode.twentytwenty.service.DayOneService;
+import pl.lw.adventofcode.twentytwenty.service.DayTwoService;
 
 @RestController
-public class DayOneController {
+public class DayTwoController {
 	
 	@Autowired
-	private DayOneService dayOneService;
+	private DayTwoService dayTwoService;
 	
-	@GetMapping("/api-"+DayOneService.ID+"-P1")
+	@GetMapping("/api-"+DayTwoService.ID+"-P1")
 	public Integer partOneGetExample() {
-		return dayOneService.solvePartOneTask(DayOneService.EXAMPLE_INPUT).getAnswer();
+		return dayTwoService.solvePartOneTask(DayTwoService.EXAMPLE_INPUT).getAnswer();
 	}
 	
-	@PostMapping("/api-"+DayOneService.ID+"-P1")
+	@PostMapping("/api-"+DayTwoService.ID+"-P1")
 	public Integer partOneSolve(@RequestBody String input) {
-		return dayOneService.solvePartOneTask(input).getAnswer();
+		return dayTwoService.solvePartOneTask(input).getAnswer();
 	}
 	
-	@GetMapping("/api-"+DayOneService.ID+"-P2")
+	@GetMapping("/api-"+DayTwoService.ID+"-P2")
 	public Integer partTwoGetExample() {
-		return dayOneService.solvePartTwoTask(DayOneService.EXAMPLE_INPUT).getAnswer();
+		return dayTwoService.solvePartTwoTask(DayTwoService.EXAMPLE_INPUT).getAnswer();
 	}
 	
-	@PostMapping("/api-"+DayOneService.ID+"-P2")
+	@PostMapping("/api-"+DayTwoService.ID+"-P2")
 	public Integer partTwoSolve(@RequestBody String input) {
-		return dayOneService.solvePartTwoTask(input).getAnswer();
+		return dayTwoService.solvePartTwoTask(input).getAnswer();
 	}
-	
+
 }

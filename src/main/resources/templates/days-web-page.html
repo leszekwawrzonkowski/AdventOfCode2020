@@ -56,11 +56,11 @@
 				<div class="accordion" id="accordionDays">
 					<div class="accordion-item" th:each="day: ${days}">
 						<h2 class="accordion-header" th:id="${'heading-' + day.id}">
-							<button th:class="${day.id} == 'D1' ? 'accordion-button' : 'accordion-button collapsed'" type="button" 
-								data-bs-toggle="collapse" th:data-bs-target="${'#collapse-' + day.id}" th:aria-expanded="${day.id} == 'D1' ? 'true' : 'false'" 
+							<button th:class="${day.id} == 'D2' ? 'accordion-button' : 'accordion-button collapsed'" type="button" 
+								data-bs-toggle="collapse" th:data-bs-target="${'#collapse-' + day.id}" th:aria-expanded="${day.id} == 'D2' ? 'true' : 'false'" 
 								th:aria-controls="${'collapse-' + day.id}" th:text="${day.name}"></button>
 						</h2>
-						<div th:id="${'collapse-' + day.id}" th:class="${day.id} == 'D1' ? 'accordion-collapse collapse show' : 'accordion-collapse collapse'" 
+						<div th:id="${'collapse-' + day.id}" th:class="${day.id} == 'D2' ? 'accordion-collapse collapse show' : 'accordion-collapse collapse'" 
 							th:aria-labelledby="${'heading-' + day.id}" data-bs-parent="#accordionDays">
 							<div class="accordion-body">
 								<div class="container">

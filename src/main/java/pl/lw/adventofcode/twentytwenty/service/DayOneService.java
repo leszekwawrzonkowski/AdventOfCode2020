@@ -14,17 +14,17 @@ import pl.lw.adventofcode.twentytwenty.util.AdventOfCodeUtils;
 @Service
 public class DayOneService {
 	
-	public static final String DAY_NAME = "Day 1";
-	public static final String DAY_ID_SUFFIX = "D1";
-	public static final String DAY_EXAMPLE_INPUT = "1721\n979\n366\n299\n675\n1456";
-	public static final String DAY_PUZZLE_PAGE_URL = "https://adventofcode.com/2020/day/1";
-	public static final String DAY_INPUT_PAGE_URL = "https://adventofcode.com/2020/day/1/input";
+	public static final String NAME = "Day 1";
+	public static final String ID = "D1";
+	public static final String EXAMPLE_INPUT = "1721\n979\n366\n299\n675\n1456";
+	public static final String PUZZLE_PAGE_URL = "https://adventofcode.com/2020/day/1";
+	public static final String INPUT_PAGE_URL = "https://adventofcode.com/2020/day/1/input";
 	
-	public static final Integer EXPECTED_SUM = 2020;
-	public static final Integer PART_ONE_ELEMENTS_TO_SUM = 2;
-	public static final Integer PART_TWO_ELEMENTS_TO_SUM = 3;
+	private static final Integer EXPECTED_SUM = 2020;
+	private static final Integer PART_ONE_ELEMENTS_TO_SUM = 2;
+	private static final Integer PART_TWO_ELEMENTS_TO_SUM = 3;
 	
-	Logger logger = LoggerFactory.getLogger(DayOneService.class);
+	private Logger logger = LoggerFactory.getLogger(DayOneService.class);
 	
 	@Autowired
 	private AdventOfCodeUtils adventOfCodeUtils;
@@ -32,14 +32,14 @@ public class DayOneService {
 	public DayOneTask solvePartOneTask(String input) {
 		DayOneTask task = new DayOneTask();
 		task.setPuzzleInput(adventOfCodeUtils.getListFromStringPuzzleInput(input));
-		task.setAnswer(this.solvingTaskCore(task.getPuzzleInput(), DayOneService.EXPECTED_SUM, DayOneService.PART_ONE_ELEMENTS_TO_SUM, new ArrayList<>()));
+		task.setAnswer(solvingTaskCore(task.getPuzzleInput(), EXPECTED_SUM, PART_ONE_ELEMENTS_TO_SUM, new ArrayList<>()));
 		return task;
 	}
 	
 	public DayOneTask solvePartTwoTask(String input) {
 		DayOneTask task = new DayOneTask();
 		task.setPuzzleInput(adventOfCodeUtils.getListFromStringPuzzleInput(input));
-		task.setAnswer(this.solvingTaskCore(task.getPuzzleInput(), EXPECTED_SUM, DayOneService.PART_TWO_ELEMENTS_TO_SUM, new ArrayList<>()));
+		task.setAnswer(solvingTaskCore(task.getPuzzleInput(), EXPECTED_SUM, PART_TWO_ELEMENTS_TO_SUM, new ArrayList<>()));
 		return task;
 	}
 	
@@ -53,9 +53,9 @@ public class DayOneService {
 			// candidates limit achieved
 			if (candidates.size() == elementsToSum) {
 				// it's a solution
-				if (this.sumElements(candidates).equals(expectedSum)) {
+				if (sumElements(candidates).equals(expectedSum)) {
 					logger.trace("Solution candidates : " + candidates);
-					return this.multiplyElements(candidates);
+					return multiplyElements(candidates);
 				}
 				// it's not a solution
 				logger.trace("it's not a solution, removing from candidates : "+elementsToCheck.get(i));

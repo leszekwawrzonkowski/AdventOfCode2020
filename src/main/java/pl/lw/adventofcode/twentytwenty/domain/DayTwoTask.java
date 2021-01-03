@@ -3,23 +3,23 @@ package pl.lw.adventofcode.twentytwenty.domain;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DayOneTask implements Task<Integer> {
+public class DayTwoTask implements Task<String> {
 	
-	private List<Integer> puzzleInput;
+	private List<String> puzzleInput;
 	private Integer answer;
 	
-	public DayOneTask() {
+	public DayTwoTask() {
 		super();
 	}
 
 	@Override
 	public void setPuzzleInput(List<String> puzzleInput) {
-		this.puzzleInput = new ArrayList<Integer>();
-		for (String puzzleLine : puzzleInput) this.puzzleInput.add(Integer.valueOf(puzzleLine));
+		this.puzzleInput = new ArrayList<String>();
+		for (String puzzleLine : puzzleInput) this.puzzleInput.add(String.valueOf(puzzleLine));
 	}
 	
 	@Override
-	public List<Integer> getPuzzleInput() {
+	public List<String> getPuzzleInput() {
 		return puzzleInput;
 	}
 
