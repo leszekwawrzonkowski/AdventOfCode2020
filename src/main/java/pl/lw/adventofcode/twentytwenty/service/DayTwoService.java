@@ -1,10 +1,8 @@
 package pl.lw.adventofcode.twentytwenty.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import pl.lw.adventofcode.twentytwenty.domain.DayTwoTask;
-import pl.lw.adventofcode.twentytwenty.util.AdventOfCodeUtils;
+import pl.lw.adventofcode.twentytwenty.domain.DayTaskWithStrings;
 
 @Service
 public class DayTwoService {
@@ -14,27 +12,24 @@ public class DayTwoService {
 	public static final String EXAMPLE_INPUT = "1-3 a: abcde\n1-3 b: cdefg\n2-9 c: ccccccccc";
 	public static final String PUZZLE_PAGE_URL = "https://adventofcode.com/2020/day/2";
 	public static final String INPUT_PAGE_URL = "https://adventofcode.com/2020/day/2/input";
-	
-	@Autowired
-	private AdventOfCodeUtils adventOfCodeUtils;
 
-	public DayTwoTask solvePartOneTask(String input) {
-		DayTwoTask task = new DayTwoTask();
-		task.setPuzzleInput(adventOfCodeUtils.getListFromStringPuzzleInput(input));
-		task.setAnswer((int)task.getPuzzleInput().stream().filter(DayTwoService::isPasswordMatchesPartOneRules).count());
+	public DayTaskWithStrings solvePartOneTask(String input) {
+		DayTaskWithStrings task = new DayTaskWithStrings();
+		task.setPuzzleInput(input);
+		task.setAnswer(task.getPuzzleInput().stream().filter(DayTwoService::isPasswordMatchesPartOneRules).count());
 		return task;
 	}
 	
-	public DayTwoTask solvePartTwoTask(String input) {
-		DayTwoTask task = new DayTwoTask();
-		task.setPuzzleInput(adventOfCodeUtils.getListFromStringPuzzleInput(input));
-		task.setAnswer((int)task.getPuzzleInput().stream().filter(DayTwoService::isPasswordMatchesPartTwoRules).count());
+	public DayTaskWithStrings solvePartTwoTask(String input) {
+		DayTaskWithStrings task = new DayTaskWithStrings();
+		task.setPuzzleInput(input);
+		task.setAnswer(task.getPuzzleInput().stream().filter(DayTwoService::isPasswordMatchesPartTwoRules).count());
 		return task;
 	}
 	
 	public static boolean isPasswordMatchesPartOneRules(String passInput) {
 		PasswordRules passRules = new PasswordRules(passInput);
-		Integer count = (int)passRules.pass.chars().filter(ch -> ch == passRules.letter).count();
+		Long count = passRules.pass.chars().filter(ch -> ch == passRules.letter).count();
 		return count >= passRules.firstNumber && count <= passRules.secondNumber;
 	}
 	

@@ -15,22 +15,22 @@ public class DayOneController {
 	private DayOneService dayOneService;
 	
 	@GetMapping("/api-"+DayOneService.ID+"-P1")
-	public Integer partOneGetExample() {
+	public Long partOneGetExample() {
 		return dayOneService.solvePartOneTask(DayOneService.EXAMPLE_INPUT).getAnswer();
 	}
 	
 	@PostMapping("/api-"+DayOneService.ID+"-P1")
-	public Integer partOneSolve(@RequestBody String input) {
+	public Long partOneSolve(@RequestBody String input) {
 		return dayOneService.solvePartOneTask(input).getAnswer();
 	}
 	
 	@GetMapping("/api-"+DayOneService.ID+"-P2")
-	public Integer partTwoGetExample() {
+	public Long partTwoGetExample() {
 		return dayOneService.solvePartTwoTask(DayOneService.EXAMPLE_INPUT).getAnswer();
 	}
 	
 	@PostMapping("/api-"+DayOneService.ID+"-P2")
-	public Integer partTwoSolve(@RequestBody String input) {
+	public Long partTwoSolve(@RequestBody String input) {
 		return dayOneService.solvePartTwoTask(input).getAnswer();
 	}
 	

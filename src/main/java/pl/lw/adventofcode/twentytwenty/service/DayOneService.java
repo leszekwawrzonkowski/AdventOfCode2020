@@ -5,11 +5,9 @@ import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import pl.lw.adventofcode.twentytwenty.domain.DayOneTask;
-import pl.lw.adventofcode.twentytwenty.util.AdventOfCodeUtils;
+import pl.lw.adventofcode.twentytwenty.domain.DayTaskWithIntegers;
 
 @Service
 public class DayOneService {
@@ -25,21 +23,18 @@ public class DayOneService {
 	private static final Integer PART_TWO_ELEMENTS_TO_SUM = 3;
 	
 	private Logger logger = LoggerFactory.getLogger(DayOneService.class);
-	
-	@Autowired
-	private AdventOfCodeUtils adventOfCodeUtils;
 
-	public DayOneTask solvePartOneTask(String input) {
-		DayOneTask task = new DayOneTask();
-		task.setPuzzleInput(adventOfCodeUtils.getListFromStringPuzzleInput(input));
-		task.setAnswer(solvingTaskCore(task.getPuzzleInput(), EXPECTED_SUM, PART_ONE_ELEMENTS_TO_SUM, new ArrayList<>()));
+	public DayTaskWithIntegers solvePartOneTask(String input) {
+		DayTaskWithIntegers task = new DayTaskWithIntegers();
+		task.setPuzzleInput(input);
+		task.setAnswer((long)solvingTaskCore(task.getPuzzleInput(), EXPECTED_SUM, PART_ONE_ELEMENTS_TO_SUM, new ArrayList<>()));
 		return task;
 	}
 	
-	public DayOneTask solvePartTwoTask(String input) {
-		DayOneTask task = new DayOneTask();
-		task.setPuzzleInput(adventOfCodeUtils.getListFromStringPuzzleInput(input));
-		task.setAnswer(solvingTaskCore(task.getPuzzleInput(), EXPECTED_SUM, PART_TWO_ELEMENTS_TO_SUM, new ArrayList<>()));
+	public DayTaskWithIntegers solvePartTwoTask(String input) {
+		DayTaskWithIntegers task = new DayTaskWithIntegers();
+		task.setPuzzleInput(input);
+		task.setAnswer((long)solvingTaskCore(task.getPuzzleInput(), EXPECTED_SUM, PART_TWO_ELEMENTS_TO_SUM, new ArrayList<>()));
 		return task;
 	}
 	
