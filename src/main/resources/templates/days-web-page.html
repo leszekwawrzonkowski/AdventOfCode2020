@@ -9,6 +9,8 @@
 	<title>Advent of Code 2020 - my solution</title>
 	<!-- Bootstrap core CSS -->
 	<link href="/css/bootstrap.min.css" rel="stylesheet" />
+	<!-- Page CSS -->
+	<link href="/css/days-web-page.css" rel="stylesheet" />
 </head>
 <body>
 	<header>
@@ -51,7 +53,7 @@
 			</div>
 		</section>
 
-		<div class="py-5 bg-light">
+		<div class="py-5" id="pageContent">
 			<div class="container">
 				<div class="accordion" id="accordionDays">
 					<div class="accordion-item" th:each="day: ${days}">

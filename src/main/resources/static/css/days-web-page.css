@@ -1,0 +1,23 @@
+#pageContent {
+    background-color: var(--bs-light);
+}
+
+/* dark theme */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: var(--bs-gray-dark);
+    }
+    #pageContent {
+        background-color: var(--bs-gray);
+    }
+    a {
+        color: var(--bs-info);
+    }
+    .form-control {
+        background-color: var(--bs-light);
+    }
+    .accordion-button:not(.collapsed) {
+        color: var(--bs-light);
+        background-color: var(--bs-dark);
+    }
+}
