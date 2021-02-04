@@ -12,26 +12,26 @@ import pl.lw.adventofcode.twentytwenty.service.DayTwoService;
 public class DayTwoController {
 	
 	@Autowired
-	private DayTwoService dayTwoService;
+	private DayTwoService service;
 	
 	@GetMapping("/api-"+DayTwoService.ID+"-P1")
 	public Long partOneGetExample() {
-		return dayTwoService.solvePartOneTask(DayTwoService.EXAMPLE_INPUT).getAnswer();
+		return service.solvePartOneTask(DayTwoService.EXAMPLE_INPUT).getAnswer();
 	}
 	
 	@PostMapping("/api-"+DayTwoService.ID+"-P1")
 	public Long partOneSolve(@RequestBody String input) {
-		return dayTwoService.solvePartOneTask(input).getAnswer();
+		return service.solvePartOneTask(input).getAnswer();
 	}
 	
 	@GetMapping("/api-"+DayTwoService.ID+"-P2")
 	public Long partTwoGetExample() {
-		return dayTwoService.solvePartTwoTask(DayTwoService.EXAMPLE_INPUT).getAnswer();
+		return service.solvePartTwoTask(DayTwoService.EXAMPLE_INPUT).getAnswer();
 	}
 	
 	@PostMapping("/api-"+DayTwoService.ID+"-P2")
 	public Long partTwoSolve(@RequestBody String input) {
-		return dayTwoService.solvePartTwoTask(input).getAnswer();
+		return service.solvePartTwoTask(input).getAnswer();
 	}
 
 }

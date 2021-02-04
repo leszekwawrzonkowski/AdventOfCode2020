@@ -11,7 +11,18 @@ public class DayThreeService {
 	
 	public static final String NAME = "Day 3";
 	public static final String ID = "D3";
-	public static final String EXAMPLE_INPUT = "..##.......\n#...#...#..\n.#....#..#.\n..#.#...#.#\n.#...##..#.\n..#.##.....\n.#.#.#....#\n.#........#\n#.##...#...\n#...##....#\n.#..#...#.#";
+	public static final String EXAMPLE_INPUT = ""
+			+ "..##.......\n"
+			+ "#...#...#..\n"
+			+ ".#....#..#.\n"
+			+ "..#.#...#.#\n"
+			+ ".#...##..#.\n"
+			+ "..#.##.....\n"
+			+ ".#.#.#....#\n"
+			+ ".#........#\n"
+			+ "#.##...#...\n"
+			+ "#...##....#\n"
+			+ ".#..#...#.#";
 	public static final String PUZZLE_PAGE_URL = "https://adventofcode.com/2020/day/3";
 	public static final String INPUT_PAGE_URL = "https://adventofcode.com/2020/day/3/input";
 

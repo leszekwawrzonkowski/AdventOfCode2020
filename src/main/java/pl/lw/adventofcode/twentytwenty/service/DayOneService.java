@@ -14,7 +14,13 @@ public class DayOneService {
 	
 	public static final String NAME = "Day 1";
 	public static final String ID = "D1";
-	public static final String EXAMPLE_INPUT = "1721\n979\n366\n299\n675\n1456";
+	public static final String EXAMPLE_INPUT = ""
+			+ "1721\n"
+			+ "979\n"
+			+ "366\n"
+			+ "299\n"
+			+ "675\n"
+			+ "1456";
 	public static final String PUZZLE_PAGE_URL = "https://adventofcode.com/2020/day/1";
 	public static final String INPUT_PAGE_URL = "https://adventofcode.com/2020/day/1/input";
 	

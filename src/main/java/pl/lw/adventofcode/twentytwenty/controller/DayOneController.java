@@ -12,26 +12,26 @@ import pl.lw.adventofcode.twentytwenty.service.DayOneService;
 public class DayOneController {
 	
 	@Autowired
-	private DayOneService dayOneService;
+	private DayOneService service;
 	
 	@GetMapping("/api-"+DayOneService.ID+"-P1")
 	public Long partOneGetExample() {
-		return dayOneService.solvePartOneTask(DayOneService.EXAMPLE_INPUT).getAnswer();
+		return service.solvePartOneTask(DayOneService.EXAMPLE_INPUT).getAnswer();
 	}
 	
 	@PostMapping("/api-"+DayOneService.ID+"-P1")
 	public Long partOneSolve(@RequestBody String input) {
-		return dayOneService.solvePartOneTask(input).getAnswer();
+		return service.solvePartOneTask(input).getAnswer();
 	}
 	
 	@GetMapping("/api-"+DayOneService.ID+"-P2")
 	public Long partTwoGetExample() {
-		return dayOneService.solvePartTwoTask(DayOneService.EXAMPLE_INPUT).getAnswer();
+		return service.solvePartTwoTask(DayOneService.EXAMPLE_INPUT).getAnswer();
 	}
 	
 	@PostMapping("/api-"+DayOneService.ID+"-P2")
 	public Long partTwoSolve(@RequestBody String input) {
-		return dayOneService.solvePartTwoTask(input).getAnswer();
+		return service.solvePartTwoTask(input).getAnswer();
 	}
 	
 }

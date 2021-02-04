@@ -9,7 +9,10 @@ public class DayTwoService {
 
 	public static final String NAME = "Day 2";
 	public static final String ID = "D2";
-	public static final String EXAMPLE_INPUT = "1-3 a: abcde\n1-3 b: cdefg\n2-9 c: ccccccccc";
+	public static final String EXAMPLE_INPUT = ""
+			+ "1-3 a: abcde\n"
+			+ "1-3 b: cdefg\n"
+			+ "2-9 c: ccccccccc";
 	public static final String PUZZLE_PAGE_URL = "https://adventofcode.com/2020/day/2";
 	public static final String INPUT_PAGE_URL = "https://adventofcode.com/2020/day/2/input";
 
