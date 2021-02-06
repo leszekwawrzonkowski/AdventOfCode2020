@@ -30,6 +30,12 @@ public class DayOneService {
 	
 	private Logger logger = LoggerFactory.getLogger(DayOneService.class);
 
+	/** AoC2020 D1T1 task description: 
+	 * Find the two entries that sum to 2020; what do you get if you multiply them together?
+	 * 
+	 * @param input puzzle input
+	 * @return day task solved
+	 */
 	public DayTaskWithIntegers solvePartOneTask(String input) {
 		DayTaskWithIntegers task = new DayTaskWithIntegers();
 		task.setPuzzleInput(input);
@@ -37,6 +43,12 @@ public class DayOneService {
 		return task;
 	}
 	
+	/** AoC2020 D1T2 task description: 
+	 * What is the product of the three entries that sum to 2020?
+	 * 
+	 * @param input puzzle input
+	 * @return day task solved
+	 */
 	public DayTaskWithIntegers solvePartTwoTask(String input) {
 		DayTaskWithIntegers task = new DayTaskWithIntegers();
 		task.setPuzzleInput(input);

@@ -16,6 +16,12 @@ public class DayTwoService {
 	public static final String PUZZLE_PAGE_URL = "https://adventofcode.com/2020/day/2";
 	public static final String INPUT_PAGE_URL = "https://adventofcode.com/2020/day/2/input";
 
+	/** AoC2020 D2T1 task description: 
+	 * How many passwords are valid according to their policies?
+	 * 
+	 * @param input puzzle input
+	 * @return day task solved
+	 */
 	public DayTaskWithStrings solvePartOneTask(String input) {
 		DayTaskWithStrings task = new DayTaskWithStrings();
 		task.setPuzzleInput(input);
@@ -23,6 +29,12 @@ public class DayTwoService {
 		return task;
 	}
 	
+	/** AoC2020 D2T2 task description: 
+	 * How many passwords are valid according to the new interpretation of the policies?
+	 * 
+	 * @param input puzzle input
+	 * @return day task solved
+	 */
 	public DayTaskWithStrings solvePartTwoTask(String input) {
 		DayTaskWithStrings task = new DayTaskWithStrings();
 		task.setPuzzleInput(input);
@@ -30,12 +42,29 @@ public class DayTwoService {
 		return task;
 	}
 	
+	/** AoC2020 D2T1 password rules: 
+	 * The password policy indicates the lowest and 
+	 * highest number of times a given letter must appear for the password to be valid. 
+	 * For example, '1-3 a' means that the password must contain 'a' at least '1' time and at most '3' times.
+	 * 
+	 * @param passInput password input
+	 * @return is password matched the rules
+	 */
 	public static boolean isPasswordMatchesPartOneRules(String passInput) {
 		PasswordRules passRules = new PasswordRules(passInput);
 		Long count = passRules.pass.chars().filter(ch -> ch == passRules.letter).count();
 		return count >= passRules.firstNumber && count <= passRules.secondNumber;
 	}
 	
+	/** AoC2020 D2T2 password rules: 
+	 * The password policy actually describes two positions in the password, 
+	 * where 1 means the first character, 2 means the second character, and so on. 
+	 * Exactly one of these positions must contain the given letter. 
+	 * Other occurrences of the letter are irrelevant for the purposes of policy enforcement.
+	 * 
+	 * @param passInput password input
+	 * @return is password matched the rules
+	 */
 	public static boolean isPasswordMatchesPartTwoRules(String passInput) {
 		PasswordRules passRules = new PasswordRules(passInput);
 		return passRules.pass.charAt(passRules.firstNumber-1) == passRules.letter ^ passRules.pass.charAt(passRules.secondNumber-1) == passRules.letter;

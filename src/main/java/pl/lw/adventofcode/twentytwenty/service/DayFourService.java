@@ -31,6 +31,13 @@ public class DayFourService {
 	public static final String PUZZLE_PAGE_URL = "https://adventofcode.com/2020/day/4";
 	public static final String INPUT_PAGE_URL = "https://adventofcode.com/2020/day/4/input";
 
+	/** AoC2020 D4T1 task description: 
+	 * Count the number of valid passports - those that have all required fields. 
+	 * Treat 'cid' as optional. In your batch file, how many passports are valid?
+	 * 
+	 * @param input puzzle input
+	 * @return day task solved
+	 */
 	public DayTaskWithStrings solvePartOneTask(String input) {
 		DayTaskWithStrings task = new DayTaskWithStrings();
 		task.setPuzzleInput(input);
@@ -39,6 +46,13 @@ public class DayFourService {
 		return task;
 	}
 	
+	/** AoC2020 D4T2 task description: 
+	 * Your job is to count the passports where all required fields are 
+	 * both present and valid according to the above rules.
+	 * 
+	 * @param input puzzle input
+	 * @return day task solved
+	 */
 	public DayTaskWithStrings solvePartTwoTask(String input) {
 		DayTaskWithStrings task = new DayTaskWithStrings();
 		task.setPuzzleInput(input);
@@ -70,7 +84,7 @@ public class DayFourService {
 	}
 	
 	private class Passport {
-		Map<String, String> fields = new HashMap<>();
+		private Map<String, String> fields = new HashMap<>();
 		
 		public void addField(String field) {
 			String[] keyValue = field.split(":");
@@ -91,18 +105,32 @@ public class DayFourService {
 			return false;
 		}
 		
+		/** AoC2020 D4T2 info:
+		 * (Birth Year) - four digits; at least 1920 and at most 2002.
+		 */
 		private boolean isBirthYearValid() {
 			return isFieldInRange("byr", 1920, 2002);
 		}
 		
+		/** AoC2020 D4T2 info:
+		 * (Issue Year) - four digits; at least 2010 and at most 2020.
+		 */
 		private boolean isIssueYearValid() {
 			return isFieldInRange("iyr", 2010, 2020);
 		}
 		
+		/** AoC2020 D4T2 info:
+		 * (Expiration Year) - four digits; at least 2020 and at most 2030.
+		 */
 		private boolean isExpirationYearValid() {
 			return isFieldInRange("eyr", 2020, 2030);
 		}
 		
+		/** AoC2020 D4T2 info:
+		 * (Height) - a number followed by either cm or in: 
+		 * If cm, the number must be at least 150 and at most 193.
+		 * If in, the number must be at least 59 and at most 76.
+		 */
 		private boolean isHeightValid() {
 			try {
 				String fVal = fields.get("hgt");
@@ -114,6 +142,9 @@ public class DayFourService {
 			return false;
 		}
 		
+		/** AoC2020 D4T2 info:
+		 * (Hair Color) - a # followed by exactly six characters 0-9 or a-f.
+		 */
 		private boolean isHairColorValid() {
 			try {
 				String val = fields.get("hcl");
@@ -123,6 +154,9 @@ public class DayFourService {
 			return false;
 		}
 		
+		/** AoC2020 D4T2 info:
+		 * (Eye Color) - exactly one of: amb blu brn gry grn hzl oth.
+		 */
 		private boolean isEyeColorValid() {
 			try {
 				return fields.get("ecl").matches("(amb|blu|brn|gry|grn|hzl|oth)");
@@ -131,6 +165,9 @@ public class DayFourService {
 			return false;
 		}
 		
+		/** AoC2020 D4T2 info:
+		 * (Passport ID) - a nine-digit number, including leading zeroes.
+		 */
 		private boolean isPassportIdValid() {
 			try {
 				return fields.get("pid").matches("[0-9]{9}");
