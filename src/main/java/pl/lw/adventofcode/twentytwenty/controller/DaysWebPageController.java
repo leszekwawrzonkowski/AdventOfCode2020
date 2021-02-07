@@ -12,6 +12,7 @@ import pl.lw.adventofcode.twentytwenty.domain.DayInfo;
 import pl.lw.adventofcode.twentytwenty.service.DayFiveService;
 import pl.lw.adventofcode.twentytwenty.service.DayFourService;
 import pl.lw.adventofcode.twentytwenty.service.DayOneService;
+import pl.lw.adventofcode.twentytwenty.service.DaySixService;
 import pl.lw.adventofcode.twentytwenty.service.DayThreeService;
 import pl.lw.adventofcode.twentytwenty.service.DayTwoService;
 
@@ -23,7 +24,8 @@ public class DaysWebPageController {
 			DayTwoService.getDayInfo(),
 			DayThreeService.getDayInfo(),
 			DayFourService.getDayInfo(),
-			DayFiveService.getDayInfo()
+			DayFiveService.getDayInfo(),
+			DaySixService.getDayInfo()
 			));
 	
 	@GetMapping("/")

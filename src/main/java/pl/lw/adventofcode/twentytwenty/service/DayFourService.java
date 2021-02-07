@@ -46,7 +46,9 @@ public class DayFourService {
 		try {
 			task.setPuzzleInput(input);
 			List<Passport> passports = preparePassportsList(task.getPuzzleInput());
-			task.setAnswer(passports.stream().filter(DayFourService::isPassportValidPartOne).count());
+			task.setAnswer(passports.stream()
+					.filter(DayFourService::isPassportValidPartOne)
+					.count());
 		} catch(Exception e) {}
 		return task;
 	}
@@ -63,7 +65,9 @@ public class DayFourService {
 		try {
 			task.setPuzzleInput(input);
 			List<Passport> passports = preparePassportsList(task.getPuzzleInput());
-			task.setAnswer(passports.stream().filter(DayFourService::isPassportValidPartTwo).count());
+			task.setAnswer(passports.stream()
+					.filter(DayFourService::isPassportValidPartTwo)
+					.count());
 		} catch(Exception e) {}
 		return task;
 	}
@@ -77,7 +81,8 @@ public class DayFourService {
 				passports.add(new Passport());
 				continue;
 			}
-			Pattern.compile(" ").splitAsStream(puzzleLine).forEach(passports.get(passports.size()-1)::addField);
+			Pattern.compile(" ").splitAsStream(puzzleLine)
+			.forEach(passports.get(passports.size()-1)::addField);
 		}
 		return passports;
 	}

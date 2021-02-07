@@ -39,7 +39,10 @@ public class DayFiveService {
 			for (String boardingPass : task.getPuzzleInput()) {
 				seats.add(new Seat(boardingPass));
 			}
-			task.setAnswer((long)seats.stream().max(Comparator.comparing(s -> s.getId())).get().getId());
+			task.setAnswer((long)seats.stream()
+					.max(Comparator.comparing(s -> s.getId()))
+					.get()
+					.getId());
 		} catch(Exception e) {}
 		return task;
 	}
@@ -61,7 +64,9 @@ public class DayFiveService {
 			for (String boardingPass : task.getPuzzleInput()) {
 				seats.add(new Seat(boardingPass));
 			}
-			List<Seat> sortedSeats = seats.stream().sorted(Comparator.comparing(s -> s.getId())).collect(Collectors.toList());
+			List<Seat> sortedSeats = seats.stream()
+					.sorted(Comparator.comparing(s -> s.getId()))
+					.collect(Collectors.toList());
 			Integer missingSeatId = null;
 			for (Seat seat : sortedSeats) {
 				if (missingSeatId != null && missingSeatId + 1 != seat.getId()) {

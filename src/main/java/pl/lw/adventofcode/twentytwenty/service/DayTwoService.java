@@ -28,7 +28,9 @@ public class DayTwoService {
 		DayTaskWithStrings task = new DayTaskWithStrings();
 		try {
 			task.setPuzzleInput(input);
-			task.setAnswer(task.getPuzzleInput().stream().filter(DayTwoService::isPasswordMatchesPartOneRules).count());
+			task.setAnswer(task.getPuzzleInput().stream()
+					.filter(DayTwoService::isPasswordMatchesPartOneRules)
+					.count());
 		} catch(Exception e) {}
 		return task;
 	}
@@ -43,7 +45,9 @@ public class DayTwoService {
 		DayTaskWithStrings task = new DayTaskWithStrings();
 		try {
 			task.setPuzzleInput(input);
-			task.setAnswer(task.getPuzzleInput().stream().filter(DayTwoService::isPasswordMatchesPartTwoRules).count());
+			task.setAnswer(task.getPuzzleInput().stream()
+					.filter(DayTwoService::isPasswordMatchesPartTwoRules)
+					.count());
 		} catch(Exception e) {}
 		return task;
 	}
@@ -58,7 +62,9 @@ public class DayTwoService {
 	 */
 	public static boolean isPasswordMatchesPartOneRules(String passInput) {
 		PasswordRules passRules = new PasswordRules(passInput);
-		Long count = passRules.pass.chars().filter(ch -> ch == passRules.letter).count();
+		Long count = passRules.pass.chars()
+				.filter(ch -> ch == passRules.letter)
+				.count();
 		return count >= passRules.firstNumber && count <= passRules.secondNumber;
 	}
 	
