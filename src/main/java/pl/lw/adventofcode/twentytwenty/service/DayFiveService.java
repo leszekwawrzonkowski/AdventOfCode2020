@@ -7,19 +7,22 @@ import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
+import pl.lw.adventofcode.twentytwenty.domain.DayInfo;
 import pl.lw.adventofcode.twentytwenty.domain.DayTaskWithStrings;
 
 @Service
 public class DayFiveService {
-	public static final String NAME = "Day 5";
+	
 	public static final String ID = "D5";
 	public static final String EXAMPLE_INPUT = ""
 			+ "FBFBBFFRLR\n"
 			+ "BFFFBBFRRR\n"
 			+ "FFFBBBFRRR\n"
 			+ "BBFFBBFRLL";
-	public static final String PUZZLE_PAGE_URL = "https://adventofcode.com/2020/day/5";
-	public static final String INPUT_PAGE_URL = "https://adventofcode.com/2020/day/5/input";
+	
+	public static DayInfo getDayInfo() {
+		return new DayInfo(ID, EXAMPLE_INPUT);
+	}
 
 	/** AoC2020 D5T1 task description: 
 	 * As a sanity check, look through your list of boarding passes. 
@@ -30,8 +33,8 @@ public class DayFiveService {
 	 */
 	public DayTaskWithStrings solvePartOneTask(String input) {
 		DayTaskWithStrings task = new DayTaskWithStrings();
-		task.setPuzzleInput(input);
 		try {
+			task.setPuzzleInput(input);
 			List<Seat> seats = new ArrayList<>();
 			for (String boardingPass : task.getPuzzleInput()) {
 				seats.add(new Seat(boardingPass));
@@ -52,8 +55,8 @@ public class DayFiveService {
 	 */
 	public DayTaskWithStrings solvePartTwoTask(String input) {
 		DayTaskWithStrings task = new DayTaskWithStrings();
-		task.setPuzzleInput(input);
 		try {
+			task.setPuzzleInput(input);
 			List<Seat> seats = new ArrayList<>();
 			for (String boardingPass : task.getPuzzleInput()) {
 				seats.add(new Seat(boardingPass));

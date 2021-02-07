@@ -2,19 +2,21 @@ package pl.lw.adventofcode.twentytwenty.service;
 
 import org.springframework.stereotype.Service;
 
+import pl.lw.adventofcode.twentytwenty.domain.DayInfo;
 import pl.lw.adventofcode.twentytwenty.domain.DayTaskWithStrings;
 
 @Service
 public class DayTwoService {
-
-	public static final String NAME = "Day 2";
+	
 	public static final String ID = "D2";
 	public static final String EXAMPLE_INPUT = ""
 			+ "1-3 a: abcde\n"
 			+ "1-3 b: cdefg\n"
 			+ "2-9 c: ccccccccc";
-	public static final String PUZZLE_PAGE_URL = "https://adventofcode.com/2020/day/2";
-	public static final String INPUT_PAGE_URL = "https://adventofcode.com/2020/day/2/input";
+	
+	public static DayInfo getDayInfo() {
+		return new DayInfo(ID, EXAMPLE_INPUT);
+	}
 
 	/** AoC2020 D2T1 task description: 
 	 * How many passwords are valid according to their policies?
@@ -24,8 +26,10 @@ public class DayTwoService {
 	 */
 	public DayTaskWithStrings solvePartOneTask(String input) {
 		DayTaskWithStrings task = new DayTaskWithStrings();
-		task.setPuzzleInput(input);
-		task.setAnswer(task.getPuzzleInput().stream().filter(DayTwoService::isPasswordMatchesPartOneRules).count());
+		try {
+			task.setPuzzleInput(input);
+			task.setAnswer(task.getPuzzleInput().stream().filter(DayTwoService::isPasswordMatchesPartOneRules).count());
+		} catch(Exception e) {}
 		return task;
 	}
 	
@@ -37,8 +41,10 @@ public class DayTwoService {
 	 */
 	public DayTaskWithStrings solvePartTwoTask(String input) {
 		DayTaskWithStrings task = new DayTaskWithStrings();
-		task.setPuzzleInput(input);
-		task.setAnswer(task.getPuzzleInput().stream().filter(DayTwoService::isPasswordMatchesPartTwoRules).count());
+		try {
+			task.setPuzzleInput(input);
+			task.setAnswer(task.getPuzzleInput().stream().filter(DayTwoService::isPasswordMatchesPartTwoRules).count());
+		} catch(Exception e) {}
 		return task;
 	}
 	

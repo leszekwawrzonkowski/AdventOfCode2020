@@ -7,12 +7,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
+import pl.lw.adventofcode.twentytwenty.domain.DayInfo;
 import pl.lw.adventofcode.twentytwenty.domain.DayTaskWithIntegers;
 
 @Service
 public class DayOneService {
 	
-	public static final String NAME = "Day 1";
 	public static final String ID = "D1";
 	public static final String EXAMPLE_INPUT = ""
 			+ "1721\n"
@@ -21,14 +21,16 @@ public class DayOneService {
 			+ "299\n"
 			+ "675\n"
 			+ "1456";
-	public static final String PUZZLE_PAGE_URL = "https://adventofcode.com/2020/day/1";
-	public static final String INPUT_PAGE_URL = "https://adventofcode.com/2020/day/1/input";
 	
 	private static final Integer EXPECTED_SUM = 2020;
 	private static final Integer PART_ONE_ELEMENTS_TO_SUM = 2;
 	private static final Integer PART_TWO_ELEMENTS_TO_SUM = 3;
 	
 	private Logger logger = LoggerFactory.getLogger(DayOneService.class);
+	
+	public static DayInfo getDayInfo() {
+		return new DayInfo(ID, EXAMPLE_INPUT);
+	}
 
 	/** AoC2020 D1T1 task description: 
 	 * Find the two entries that sum to 2020; what do you get if you multiply them together?
@@ -38,8 +40,10 @@ public class DayOneService {
 	 */
 	public DayTaskWithIntegers solvePartOneTask(String input) {
 		DayTaskWithIntegers task = new DayTaskWithIntegers();
-		task.setPuzzleInput(input);
-		task.setAnswer((long)solvingTaskCore(task.getPuzzleInput(), EXPECTED_SUM, PART_ONE_ELEMENTS_TO_SUM, new ArrayList<>()));
+		try {
+			task.setPuzzleInput(input);
+			task.setAnswer((long)solvingTaskCore(task.getPuzzleInput(), EXPECTED_SUM, PART_ONE_ELEMENTS_TO_SUM, new ArrayList<>()));
+		} catch(Exception e) {}
 		return task;
 	}
 	
@@ -51,8 +55,10 @@ public class DayOneService {
 	 */
 	public DayTaskWithIntegers solvePartTwoTask(String input) {
 		DayTaskWithIntegers task = new DayTaskWithIntegers();
-		task.setPuzzleInput(input);
-		task.setAnswer((long)solvingTaskCore(task.getPuzzleInput(), EXPECTED_SUM, PART_TWO_ELEMENTS_TO_SUM, new ArrayList<>()));
+		try {
+			task.setPuzzleInput(input);
+			task.setAnswer((long)solvingTaskCore(task.getPuzzleInput(), EXPECTED_SUM, PART_TWO_ELEMENTS_TO_SUM, new ArrayList<>()));
+		} catch(Exception e) {}
 		return task;
 	}
 	

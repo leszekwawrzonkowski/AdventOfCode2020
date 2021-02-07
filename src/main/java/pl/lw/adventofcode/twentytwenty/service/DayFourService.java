@@ -8,11 +8,12 @@ import java.util.regex.Pattern;
 
 import org.springframework.stereotype.Service;
 
+import pl.lw.adventofcode.twentytwenty.domain.DayInfo;
 import pl.lw.adventofcode.twentytwenty.domain.DayTaskWithStrings;
 
 @Service
 public class DayFourService {
-	public static final String NAME = "Day 4";
+	
 	public static final String ID = "D4";
 	public static final String EXAMPLE_INPUT = ""
 			+ "ecl:gry pid:860033327 eyr:2020 hcl:#fffffd\n"
@@ -28,8 +29,10 @@ public class DayFourService {
 			+ "\n"
 			+ "hcl:#cfa07d eyr:2025 pid:166559648\n"
 			+ "iyr:2011 ecl:brn hgt:59in";
-	public static final String PUZZLE_PAGE_URL = "https://adventofcode.com/2020/day/4";
-	public static final String INPUT_PAGE_URL = "https://adventofcode.com/2020/day/4/input";
+	
+	public static DayInfo getDayInfo() {
+		return new DayInfo(ID, EXAMPLE_INPUT);
+	}
 
 	/** AoC2020 D4T1 task description: 
 	 * Count the number of valid passports - those that have all required fields. 
@@ -40,9 +43,11 @@ public class DayFourService {
 	 */
 	public DayTaskWithStrings solvePartOneTask(String input) {
 		DayTaskWithStrings task = new DayTaskWithStrings();
-		task.setPuzzleInput(input);
-		List<Passport> passports = preparePassportsList(task.getPuzzleInput());
-		task.setAnswer(passports.stream().filter(DayFourService::isPassportValidPartOne).count());
+		try {
+			task.setPuzzleInput(input);
+			List<Passport> passports = preparePassportsList(task.getPuzzleInput());
+			task.setAnswer(passports.stream().filter(DayFourService::isPassportValidPartOne).count());
+		} catch(Exception e) {}
 		return task;
 	}
 	
@@ -55,9 +60,11 @@ public class DayFourService {
 	 */
 	public DayTaskWithStrings solvePartTwoTask(String input) {
 		DayTaskWithStrings task = new DayTaskWithStrings();
-		task.setPuzzleInput(input);
-		List<Passport> passports = preparePassportsList(task.getPuzzleInput());
-		task.setAnswer(passports.stream().filter(DayFourService::isPassportValidPartTwo).count());
+		try {
+			task.setPuzzleInput(input);
+			List<Passport> passports = preparePassportsList(task.getPuzzleInput());
+			task.setAnswer(passports.stream().filter(DayFourService::isPassportValidPartTwo).count());
+		} catch(Exception e) {}
 		return task;
 	}
 	

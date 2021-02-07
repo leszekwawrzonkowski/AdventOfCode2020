@@ -57,37 +57,37 @@
 			<div class="container">
 				<div class="accordion" id="accordionDays">
 					<div class="accordion-item" th:each="day: ${days}">
-						<h2 class="accordion-header" th:id="${'heading-' + day.id}">
-							<button th:class="${day.id} == 'D5' ? 'accordion-button' : 'accordion-button collapsed'" type="button" 
-								data-bs-toggle="collapse" th:data-bs-target="${'#collapse-' + day.id}" th:aria-expanded="${day.id} == 'D5' ? 'true' : 'false'" 
-								th:aria-controls="${'collapse-' + day.id}" th:text="${day.name}"></button>
+						<h2 class="accordion-header" th:id="${'heading-' + day.getId()}">
+							<button th:class="${day.getId()} == 'D5' ? 'accordion-button' : 'accordion-button collapsed'" type="button" 
+								data-bs-toggle="collapse" th:data-bs-target="${'#collapse-' + day.getId()}" th:aria-expanded="${day.getId()} == 'D5' ? 'true' : 'false'" 
+								th:aria-controls="${'collapse-' + day.getId()}" th:text="${day.getName()}"></button>
 						</h2>
-						<div th:id="${'collapse-' + day.id}" th:class="${day.id} == 'D5' ? 'accordion-collapse collapse show' : 'accordion-collapse collapse'" 
-							th:aria-labelledby="${'heading-' + day.id}" data-bs-parent="#accordionDays">
+						<div th:id="${'collapse-' + day.getId()}" th:class="${day.getId()} == 'D5' ? 'accordion-collapse collapse show' : 'accordion-collapse collapse'" 
+							th:aria-labelledby="${'heading-' + day.getId()}" data-bs-parent="#accordionDays">
 							<div class="accordion-body">
 								<div class="container">
 									<div class="row">
 										<div class="col">
 											<div class="mb-3">
-												<label th:for="${'textarea-' + day.id}" class="form-label">
+												<label th:for="${'textarea-' + day.getId()}" class="form-label">
 													Place input here from 
-													<a th:href="${day.inputPageUrl}" target="_blank">the input page</a> 
+													<a th:href="${day.getInputPageUrl()}" target="_blank">the input page</a> 
 													or leave an example input from 
-													<a th:href="${day.puzzlePageUrl}" target="_blank">the puzzle page</a>
+													<a th:href="${day.getPuzzlePageUrl()}" target="_blank">the puzzle page</a>
 												</label>
-												<textarea class="form-control" th:id="${'textarea-' + day.id}" type="text" rows="3" th:text="${day.exampleInput}"></textarea>
+												<textarea class="form-control" th:id="${'textarea-' + day.getId()}" type="text" rows="3" th:text="${day.getExampleInput()}"></textarea>
 											</div>
-											<button type="submit" class="btn btn-primary" th:id="${'button-' + day.id}">Submit to see the solutions</button>
+											<button type="submit" class="btn btn-primary" th:id="${'button-' + day.getId()}">Submit to see the solutions</button>
 										</div>
 										<div class="col col-lg-3">
 											<strong>Solutions</strong>
 											<div class="mb-3">
-												<label th:for="${'input-' + day.id + '-P1'}" class="form-label">Part One</label>
-												<input type="text" class="form-control" th:id="${'input-' + day.id + '-P1'}" readonly>
+												<label th:for="${'input-' + day.getId() + '-P1'}" class="form-label">Part One</label>
+												<input type="text" class="form-control" th:id="${'input-' + day.getId() + '-P1'}" readonly>
 											</div>
 											<div class="mb-3">
-												<label th:for="${'input-' + day.id + '-P2'}" class="form-label">Part Two</label>
-												<input type="text" class="form-control" th:id="${'input-' + day.id + '-P2'}" readonly>
+												<label th:for="${'input-' + day.getId() + '-P2'}" class="form-label">Part Two</label>
+												<input type="text" class="form-control" th:id="${'input-' + day.getId() + '-P2'}" readonly>
 											</div>
 										</div>
 									</div>
