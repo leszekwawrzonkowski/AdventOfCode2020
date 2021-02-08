@@ -77,7 +77,7 @@ public class DayFourService {
 		passports.add(new Passport());
 		for (String puzzleLine : puzzleInput) {
 			// Passports are separated by blank lines
-			if(puzzleLine.equals("")) {
+			if (puzzleLine.equals("")) {
 				passports.add(new Passport());
 				continue;
 			}
@@ -147,8 +147,8 @@ public class DayFourService {
 			try {
 				String fVal = fields.get("hgt");
 				Integer val = Integer.valueOf(fVal.substring(0, fVal.length()-2));
-				if(fVal.endsWith("cm")) return 150 <= val && val <= 193;
-				else if(fVal.endsWith("in")) return 59 <= val && val <= 76;
+				if (fVal.endsWith("cm")) return 150 <= val && val <= 193;
+				else if (fVal.endsWith("in")) return 59 <= val && val <= 76;
 			}
 			catch(Exception e) {}
 			return false;

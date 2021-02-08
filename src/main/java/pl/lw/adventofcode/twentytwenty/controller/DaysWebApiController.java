@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 import pl.lw.adventofcode.twentytwenty.service.DayFiveService;
 import pl.lw.adventofcode.twentytwenty.service.DayFourService;
 import pl.lw.adventofcode.twentytwenty.service.DayOneService;
+import pl.lw.adventofcode.twentytwenty.service.DaySevenService;
 import pl.lw.adventofcode.twentytwenty.service.DaySixService;
 import pl.lw.adventofcode.twentytwenty.service.DayThreeService;
 import pl.lw.adventofcode.twentytwenty.service.DayTwoService;
@@ -27,6 +28,8 @@ public class DaysWebApiController {
 	private DayFiveService d5;
 	@Autowired
 	private DaySixService d6;
+	@Autowired
+	private DaySevenService d7;
 	
 	@PostMapping("/api-"+DayOneService.ID+"-P1")
 	public Long d1P1Solve(@RequestBody String input) {
@@ -86,5 +89,15 @@ public class DaysWebApiController {
 	@PostMapping("/api-"+DaySixService.ID+"-P2")
 	public Long d6P2Solve(@RequestBody String input) {
 		return d6.solvePartTwoTask(input).getAnswer();
+	}
+	
+	@PostMapping("/api-"+DaySevenService.ID+"-P1")
+	public Long d7P1Solve(@RequestBody String input) {
+		return d7.solvePartOneTask(input).getAnswer();
+	}
+	
+	@PostMapping("/api-"+DaySevenService.ID+"-P2")
+	public Long d7P2Solve(@RequestBody String input) {
+		return d7.solvePartTwoTask(input).getAnswer();
 	}
 }

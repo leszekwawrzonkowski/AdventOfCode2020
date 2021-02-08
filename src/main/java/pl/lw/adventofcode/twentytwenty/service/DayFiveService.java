@@ -116,7 +116,7 @@ public class DayFiveService {
 				rowCandidate = rowCandidate.getSubRange(rowDir, this.rowDirectionLowerHalf, this.rowDirectionUpperHalf);
 				// System.out.println("row dir="+rowDir+" range after="+rowCandidate);
 			}
-			if(rowCandidate.start != rowCandidate.end) throw new Exception("Row candidate not found for boarding pass '"+boardingPass+"'. "
+			if (rowCandidate.start != rowCandidate.end) throw new Exception("Row candidate not found for boarding pass '"+boardingPass+"'. "
 					+ "Found S="+rowCandidate.start+" E="+rowCandidate.end);
 			this.row = rowCandidate.start;
 			
@@ -127,7 +127,7 @@ public class DayFiveService {
 				colCandidate = colCandidate.getSubRange(colDir, this.colDirectionLowerHalf, this.colDirectionUpperHalf);
 				// System.out.println("col dir="+colDir+" range after="+colCandidate);
 			}
-			if(colCandidate.start != colCandidate.end) throw new Exception("Column candidate not found for boarding pass '"+boardingPass+"'. "
+			if (colCandidate.start != colCandidate.end) throw new Exception("Column candidate not found for boarding pass '"+boardingPass+"'. "
 					+ "Found S="+colCandidate.start+" E="+colCandidate.end);
 			this.column = colCandidate.start;
 			
@@ -154,8 +154,8 @@ public class DayFiveService {
 		/** Return lower or upper half of that range.
 		 */
 		public Range getSubRange(char direction, char lowerHalf, char upperHalf) {
-			if(direction == lowerHalf) return new Range(this.start, this.start + (this.end-this.start)/2);
-			if(direction == upperHalf) return new Range(this.start + (this.end-this.start)/2 + 1, this.end);
+			if (direction == lowerHalf) return new Range(this.start, this.start + (this.end-this.start)/2);
+			if (direction == upperHalf) return new Range(this.start + (this.end-this.start)/2 + 1, this.end);
 			return null;
 		}
 

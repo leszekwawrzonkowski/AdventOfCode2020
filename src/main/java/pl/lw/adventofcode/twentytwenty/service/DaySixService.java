@@ -78,7 +78,7 @@ public class DaySixService {
 		personsGroups.add(new PersonsGroup());
 		for (String puzzleLine : puzzleInput) {
 			// Each group's answers are separated by a blank line
-			if(puzzleLine.equals("")) {
+			if (puzzleLine.equals("")) {
 				personsGroups.add(new PersonsGroup());
 				continue;
 			}
@@ -118,7 +118,7 @@ public class DaySixService {
 				List<Character> chars = personAnswers.chars()
 				.mapToObj(c -> (char) c)
 				.collect(Collectors.toList());
-				if(sameChars == null) {
+				if (sameChars == null) {
 					sameChars = chars;
 					continue;
 				}
