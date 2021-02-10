@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import pl.lw.adventofcode.twentytwenty.domain.DayInfo;
+import pl.lw.adventofcode.twentytwenty.service.DayEightService;
 import pl.lw.adventofcode.twentytwenty.service.DayFiveService;
 import pl.lw.adventofcode.twentytwenty.service.DayFourService;
 import pl.lw.adventofcode.twentytwenty.service.DayOneService;
@@ -27,7 +28,8 @@ public class DaysWebPageController {
 			DayFourService.getDayInfo(),
 			DayFiveService.getDayInfo(),
 			DaySixService.getDayInfo(),
-			DaySevenService.getDayInfo()
+			DaySevenService.getDayInfo(),
+			DayEightService.getDayInfo()
 			));
 	
 	@GetMapping("/")
